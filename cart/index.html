@@ -1,12 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    
+  <div class="cart-container">
+
+    <header>
+      <div class="logo">
+        MeShop.
+      </div>
+      <div class="nav-items">
+        <a href="../">Home</a>
+        <a href="../login/">Login</a>
+        <a href="../signup/">Signup</a>
+        <a href="../shop/">Shop</a>
+        <a href="./">My Cart</a>
+        <a href="../profile/">Profile</a>
+      </div>
+    </header>
+    <main>
+      <h1>My Cart</h1>
+      <div class="content">
+        <div class="myProducts">
+          <!-- <div class="product-cart">
+            <div class="image">
+              <img src="" alt="${category}-image">
+            </div>
+            <div class="product-info">
+              <h5 class="product-title">${product.title}</h5>
+              <div class="price-size-section">
+                <span class="price">${product.price}$</span>
+                <span class="size">${product.size}</span>
+              </div>
+              <div class="colors">
+                Colors : <div class="color">
+                  <div></div>
+                </div>
+              </div>
+              <div class="rating-info"> Rating : ${product.rating.rate}
+                <div class="rating-image"><img src="./images/Star 1.png" alt=""></div>
+              </div>
+
+            </div>
+            <button class="removeFrmCart" onclick="removeFrmCart(event)" id="${product.id}">Remove From Cart</button>
+          </div>
+          <div class="product-cart">
+            <div class="image">
+              <img src="" alt="${category}-image">
+            </div>
+            <div class="product-info">
+              <h5 class="product-title">${product.title}</h5>
+              <div class="price-size-section">
+                <span class="price">${product.price}$</span>
+                <span class="size">${product.size}</span>
+              </div>
+              <div class="colors">
+                Colors : <div class="color">
+                  <div></div>
+                </div>
+              </div>
+              <div class="rating-info"> Rating : ${product.rating.rate}
+                <div class="rating-image"><img src="./images/Star 1.png" alt=""></div>
+              </div>
+
+            </div>
+            <button class="removeFrmCart" onclick="removeFrmCart(event)" id="${product.id}">Remove From Cart</button>
+          </div> -->
+         
+        </div>
+        <div class="checkoutList">
+          <div class="checkout-container">
+            <h3>Checkout List</h3>
+            <div class="products-list">
+              <div class="productList-info">
+                <span>title</span>
+                <span>price</span>
+              </div>
+              <div class="productList-info">
+                <span>title</span>
+                <span>price</span>
+              </div>
+              <div class="productList-info">
+                <span>title</span>
+                <span>price</span>
+              </div>
+            </div>
+             <div class="totalPrice-section">
+              <span>Total </span><span id="total-price"></span>
+             </div>
+              <button id="checkoutBtn">Click To Checkout</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
 </body>
+
 </html>
