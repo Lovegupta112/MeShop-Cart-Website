@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+:root{
+    --black:#000000;
+    --white:#FFFFFF;
+}
+
+.signup-container{
+ min-height:100vh;
+}
+main{
+    min-height: calc(100vh - 11vh);
+    display:flex;
+    justify-content: center;
+    padding:2rem 0;
+}
+form{
+    width:95%;
+}
+form section{
+    margin:1rem 0;
+}
+
+form input{
+    padding:0.5rem 1rem;
+    width: 100%;
+    font-size:1rem;
+}
+form input:focus{
+    outline: none;
+}
+button{
+    padding:5px 1rem;
+    line-height: 2;
+    margin-right:1rem;
+    color:var(--white);
+    background-color:var(--black);
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+

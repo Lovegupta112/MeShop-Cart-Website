@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile page</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="profile-container">
+        <header>
+            <div class="logo">
+                MeShop.
+            </div>
+            <div class="nav-items">
+                <a href="../">Home</a>
+                <a href="./">Login</a>
+                <a href="./">Signup</a>
+                <a href="../shop">Shop</a>
+                <a href="">My Cart</a>
+                <a href="./">Profile</a>
+            </div>
+        </header>
+        <main>
+
+            <!-- <div class="profile-info">
+                <div>First Name : <span id="firstName"></span></div>
+                <div>Last Name : <span id="lastName"></span></div>
+                <div>Email : <span id="email"></span></div>
+            </div> -->
+
+            <div class="profile-section">
+                <h1>My Profile</h1>
+                <form action="">
+                    <section>
+                        <!-- <label for="firstName">First Name</label> -->
+                        <input type="text" id="firstName" placeholder="First Name">
+                    </section>
+                    <section>
+                        <!-- <label for="lastName">Last Name</label> -->
+                        <input type="text" id="lastName" placeholder="Last Name">
+                    </section>
+                    <section>
+                        <!-- <label for="email">Email</label> -->
+                        <input type="email" id="email" placeholder="Email">
+                    </section>
+                    <br>
+                    <button type="submit" id="saveInfoBtn">Save Info</button>
+                </form>
+            </div>
+            <div class="password-section">
+                <h1>Edit Password</h1>
+                <form action="">
+                    <section>
+                        <!-- <label for="password">Password</label> -->
+                        <input type="password" id="oldPassword" placeholder="Old Password">
+                    </section>
+                    <section>
+                        <!-- <label for="password">Password</label> -->
+                        <input type="password" id="newPassword" placeholder="New Password">
+                    </section>
+                    <section>
+                        <!-- <label for="password">Password</label> -->
+                        <input type="password" id="confirmNewPassword" placeholder="Confirm New Password">
+                    </section>
+                    <br>
+                    <button type="submit" id="changePasswordBtn">Change Password</button>
+                </form>
+            </div>
+
+            <div class="logout-section">
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
