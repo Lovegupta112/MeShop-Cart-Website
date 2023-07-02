@@ -18,12 +18,12 @@
     font-size:3rem;
     margin: 2rem auto;
   }
-  #rzp-button1{
+  #rzp-button1,#backToShopBtn{
     width:200px;
     line-height: 2.5;
     background-color:var(--black);
     border: none;
     color:var(--white);
     cursor: pointer;
-    margin:1rem auto;
+    margin:1rem;
   }

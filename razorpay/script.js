@@ -19,3 +19,8 @@ document.getElementById("rzp-button1").onclick = function (e) {
     localStorage.removeItem('cart');
     e.preventDefault();
   };
+
+  document.getElementById('backToShopBtn').onclick=function(){
+
+    location.href='../shop'
+  }
