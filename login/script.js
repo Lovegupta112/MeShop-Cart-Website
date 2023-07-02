@@ -8,6 +8,13 @@ loginBtn.addEventListener('click',(event)=>{
 event.preventDefault();
 
 let users=JSON.parse(localStorage.getItem('users'));
+let access_token=JSON.parse(sessionStorage.getItem('access_token'));
+let loggedInUser=JSON.parse(sessionStorage.getItem('loggedInUser'));
+
+if(access_token && loggedInUser){
+  location.href='../profile';
+}
+
 if( email.value.trim()==='' || password.value==='' ){
   alert('Please Enter the all fields');
 } 
@@ -19,6 +26,7 @@ else{
      if(userObj){
       if(userObj.password===password.value){
         sessionStorage.setItem('loggedInUser',JSON.stringify(userObj));
+        sessionStorage.setItem('access_token',JSON.stringify(genrateRandomToken()));
         location.href='../profile';
         alert('login successfull');
       }
@@ -40,3 +48,13 @@ else{
 
 })
 
+function genrateRandomToken() {
+  const Strings =
+    "@#$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  let randomToken = "";
+  for (let i = 1; i <= 16; i++) {
+    randomToken += Strings[Math.floor(Math.random() * 17)];
+  }
+  return randomToken;
+}

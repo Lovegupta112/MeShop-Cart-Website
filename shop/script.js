@@ -5,7 +5,7 @@ let categoriesArr = [];
 let productArr=[];
 
 
-if(!sessionStorage.getItem('loggedInUser')){
+if(!sessionStorage.getItem('loggedInUser') && !sessionStorage.getItem('access_token')){
   location.href='../login';
 }
 window.addEventListener("load", fetchCategories);

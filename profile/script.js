@@ -76,7 +76,7 @@ changePasswordBtn.addEventListener('click',(event)=>{
 
 logoutBtn.addEventListener('click',()=>{
     sessionStorage.removeItem('loggedInUser');
-    sessionStorage.removeItem('cart');
+    sessionStorage.removeItem('access_token');
     window.location.href='../login';
 })
 

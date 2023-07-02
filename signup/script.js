@@ -10,6 +10,16 @@ let cnfPassword = document.getElementById('confirmPassword');
 let signupBtn = document.getElementById('signupBtn');
 let redirectTologin=document.getElementById('redirectTologin');
 
+
+//if we already logged in so it will redirect to profile
+let access_token=JSON.parse(sessionStorage.getItem('access_token'));
+let loggedInUser=JSON.parse(sessionStorage.getItem('loggedInUser'));
+
+if(access_token && loggedInUser){
+  location.href='../profile';
+}
+
+
 signupBtn.addEventListener('click', (event) => {
   // console.log('hi')
   event.preventDefault();
@@ -80,6 +90,7 @@ function  saveUser(firstNameValue,lastNameValue,emailValue,passwordValue){
   users.push(userObj);
   localStorage.setItem('users',JSON.stringify(users));
   sessionStorage.setItem('loggedInUser',JSON.stringify(userObj));
+  sessionStorage.setItem('access_token',JSON.stringify(genrateRandomToken()));
   firstName.value='';
   lastName.value='';
   email.value='';
@@ -97,3 +108,14 @@ redirectTologin.addEventListener('click',(event)=>{
   event.preventDefault();
   window.location.href='../login';
 })
+
+function genrateRandomToken() {
+  const Strings =
+    "@#$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  let randomToken = "";
+  for (let i = 1; i <= 16; i++) {
+    randomToken += Strings[Math.floor(Math.random() * 17)];
+  }
+  return randomToken;
+}

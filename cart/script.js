@@ -6,10 +6,17 @@ let cart=JSON.parse(localStorage.getItem('cart'));
 
 
 
+window.addEventListener('load',checkCart);
 
-if(!cart || cart.length===0){
-location.href='../shop/';
-alert('there is no Item added in cart');
+function checkCart(){
+  if(!cart || cart.length===0){
+    // alert('there is no Item added in cart');
+    myProducts.innerHTML="";
+    let h1=document.createElement('h1');
+     h1.innerText='there is no Item added in cart';
+    myProducts.append(h1);
+    location.href='../shop/';
+  }
 }
 
 function showProducts(){
@@ -73,6 +80,7 @@ function removeFrmCart(event){
   alert('Removed from Cart !');
   showProducts();
   showCheckoutList();
+  checkCart();
   localStorage.setItem('cart',JSON.stringify(cart));
 }
 
