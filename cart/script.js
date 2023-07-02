@@ -1,17 +1,22 @@
 const myProducts=document.querySelector('.myProducts');
 const productsList=document.querySelector('.products-list');
 const totalPriceSpan=document.querySelector('.totalPrice-section #total-price');
-let cart=JSON.parse(sessionStorage.getItem('cart'));
+const checkoutBtn=document.getElementById('checkoutBtn');
+let cart=JSON.parse(localStorage.getItem('cart'));
 
-if(!cart){
-location.href='../login/';
+
+
+
+if(!cart || cart.length===0){
+location.href='../shop/';
+alert('there is no Item added in cart');
 }
-let totalPrice=0;
+
 function showProducts(){
  myProducts.innerHTML="";
 
   cart.forEach((product) => {
-    totalPrice +=Number(product.price);
+   
       myProducts.innerHTML += `
     
   <div class="product-cart">
@@ -42,17 +47,38 @@ showProducts();
 
 function showCheckoutList(){
 productsList.innerHTML="";
-
+let totalPrice=0;
 cart.forEach((product)=>{
+  totalPrice +=Number(product.price);
     productsList.innerHTML +=`
  <div class="productList-info">
     <span>${product.title.slice(0,15)}</span>
-    <span>$${product.price}</span>
+    <span>$${product.price.toFixed(2)}</span>
   </div>
     `;
 })
 
-totalPriceSpan.innerHTML=`Rs ${totalPrice}/-`;
+totalPriceSpan.innerHTML=` ${totalPrice}/-`;
+}
+showCheckoutList();
+
+function removeFrmCart(event){
+  // console.log(event.target.id);
+  let removeCartId=event.target.id;
+  let remainingProduct=cart.filter((product)=>{
+     if(product.id!=removeCartId) 
+      return product;
+  })
+  cart=[...remainingProduct];
+  alert('Removed from Cart !');
+  showProducts();
+  showCheckoutList();
+  localStorage.setItem('cart',JSON.stringify(cart));
 }
 
-showCheckoutList();
+
+checkoutBtn.addEventListener('click',()=>{
+  localStorage.removeItem('cart');
+  alert('Purchasing Product..');
+  location.href='../razorpay/';
+})

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+:root{
+    --black:#000000;
+    --white:#FFFFFF;
+}
+.redirectRazorPay-container{
+    min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  }
+  h1{
+    font-size:3rem;
+    margin: 2rem auto;
+  }
+  #rzp-button1{
+    width:200px;
+    line-height: 2.5;
+    background-color:var(--black);
+    border: none;
+    color:var(--white);
+    cursor: pointer;
+    margin:1rem auto;
+  }

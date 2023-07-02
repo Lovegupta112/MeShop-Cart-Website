@@ -28,7 +28,7 @@ main .content{
     display: flex;
 }
 .myProducts{
-    width: 75%;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     row-gap: 13px;
@@ -38,8 +38,8 @@ main .content{
     padding: 5px 10px;
 }
 .checkoutList{
-    width: 25%;
-    padding: 16px;
+    width: 30%;
+    padding: 10px;
 }
 .checkoutList .checkout-container{
     min-height: 200px;
@@ -47,6 +47,7 @@ main .content{
     color: white;
     display: flex;
     flex-direction: column;
+    padding: 15px 5px;
 }
 .checkout-container h3{
     text-align: center;
@@ -59,7 +60,8 @@ main .content{
 }
 .totalPrice-section{
     padding: 5px 9px;
-    border: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     display: flex;
     justify-content: space-between;
 }
@@ -70,7 +72,7 @@ main .content{
     color:var(--black);
     cursor: pointer;
      width: 80%;
-    margin: 5px auto;
+    margin: 10px auto;
 }
 
 .product-cart {

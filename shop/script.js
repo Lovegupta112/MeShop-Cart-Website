@@ -246,7 +246,7 @@ function showFilterProducts(productsData){
 function addToCart(event){
   // console.log(event.target);
   let objId=event.target.id;
-  let productObj=JSON.parse(sessionStorage.getItem('cart')) || [];
+  let productObj=JSON.parse(localStorage.getItem('cart')) || [];
   let product;
   productArr.forEach((products)=>{
    product= products.find((elm)=>{
@@ -260,8 +260,10 @@ function addToCart(event){
    })
   
   //  if(productObj){
-    sessionStorage.setItem('cart',JSON.stringify(productObj));
+    localStorage.setItem('cart',JSON.stringify(productObj));
   //  }
+
+  alert('Product added in Cart ');
 }
 
 
